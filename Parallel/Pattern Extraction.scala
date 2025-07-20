@@ -10,10 +10,10 @@ import scala.concurrent.duration._
 
 object BusDataProcessor {
   def main(args: Array[String]): Unit = {
-    val gpsPath = if (args.length > 0) args(0) else "hdfs://10.103.104.102:9000/wgr/bus_19-02-01/gps/*"
-    val busLinePath = if (args.length > 1) args(1) else "hdfs://10.103.104.102:9000/wgr/bus_line.csv"
-    val intermediateOutput = if (args.length > 2) args(2) else "hdfs://10.103.104.102:9000/wgr/bus_19-02-01/lines95_processed"
-    val finalOutputBase = if (args.length > 3) args(3) else "hdfs://10.103.104.102:9000/wgr/bus_19-02-01/lines95"
+    val gpsPath = if (args.length > 0) args(0) else "hdfs://10.29.74.178:9000/gps/*"
+    val busLinePath = if (args.length > 1) args(1) else "hdfs://10.29.74.178:9000/bus_line.csv"
+    val intermediateOutput = if (args.length > 2) args(2) else "hdfs://10.29.74.178:9000/lines95_processed"
+    val finalOutputBase = if (args.length > 3) args(3) else "hdfs://10.29.74.178:9000/lines95"
 
     val spark = SparkSession.builder()
       .appName("BusDataProcessing")
